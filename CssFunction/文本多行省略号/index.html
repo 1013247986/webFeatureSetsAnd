@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home-big-box {
+            width: 800px;
+            height: 200px;
+            background: pink;
+            margin: 0 auto;
+            box-shadow: 0 0 10px #000000;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: white;
+            box-shadow: 0 0 6px #000000;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .text3 {
+            width: 100px;
+            height: 100px;
+            background: white;
+            box-shadow: 0 0 6px #000000;
+            line-height: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* IE6-7不显示content内容，所以要兼容IE6-7可以是在内容中加入一个标签，比如用<span class="line-clamp">...</span>去模拟；
+           IE8，需要将::after替换成:after； */
+        .text3::after {
+            content: "...";
+            font-weight: bold;
+            position: absolute;
+            height: 20px;
+            width: 19px;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+        }
+        /* 使用webkit方法 */
+        .text4 {
+            width: 100px;
+            height: 100px;
+            background: white;
+            box-shadow: 0 0 6px #000000;
+            line-height: 20px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <div class="home-big-box">
+            <div class="item">
+                我也是他们中间的一个。坐在角落里，看着眼前的人，懒洋洋的笑。在不知不觉中把城市的灰，以及沮丧无奈诅咒反抗融进了生命。那年我十八岁。我不爱任何人。我觉得自己已经老了。我常常坐在路边看夕阳。人们说我看着很颓废
+            </div>
+            <div class="text3">
+                我也是他们中间的一个。坐在角落里，看着眼前的人，懒洋洋的笑。在不知不觉中把城市的灰，以及沮丧无奈诅咒反抗融进了生命。那年我十八岁。我不爱任何人。我觉得自己已经老了。我常常坐在路边看夕阳。人们说我看着很颓废
+            </div>
+            <div class="text4">
+                我也是他们中间的一个。坐在角落里，看着眼前的人，懒洋洋的笑。在不知不觉中把城市的灰，以及沮丧无奈诅咒反抗融进了生命。那年我十八岁。我不爱任何人。我觉得自己已经老了。我常常坐在路边看夕阳。人们说我看着很颓废
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+</body>
+
+</html>
